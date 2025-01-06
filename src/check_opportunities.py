@@ -14,8 +14,13 @@ def get_opportunities():
     }
     
     try:
-        response = requests.get(url, headers=headers)
+        # Added verify=False to bypass SSL certificate verification
+        response = requests.get(url, headers=headers, verify=False)
         response.raise_for_status()
+        
+        # Suppress only the InsecureRequestWarning from urllib3
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         
         soup = BeautifulSoup(response.text, 'html.parser')
         
