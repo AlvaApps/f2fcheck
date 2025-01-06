@@ -1,0 +1,36 @@
+name: Check Folk2Folk Opportunities
+
+on:
+  schedule:
+    - cron: "*/5 * * * *" # Runs every 5 minutes
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  check-opportunities:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check for new opportunities
+        id: check
+        run: python src/check_opportunities.py
+
+      - name: Commit changes
+        if: steps.check.outputs.has_new == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add opportunities.json
+          git commit -m "Update opportunities [skip ci]"
+          git push
