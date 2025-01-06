@@ -113,13 +113,22 @@ def send_email(new_opportunities):
     recipients = [email.strip() for email in recipients_str.split(';') if email.strip()]
     
     if not all([sender_email, sender_password, recipients]):
-        print("Missing email configuration. Please check EMAIL_SENDER, EMAIL_PASSWORD, and EMAIL_RECIPIENT secrets.")
+        missing = []
+        if not sender_email:
+            missing.append("EMAIL_SENDER")
+        if not sender_password:
+            missing.append("EMAIL_PASSWORD")
+        if not recipients:
+            missing.append("EMAIL_RECIPIENT")
+        print(f"Missing email configuration: {', '.join(missing)}")
         return
+    
+    print(f"Sending email from {sender_email} to {', '.join(recipients)}")
     
     # Create message
     message = MIMEMultipart()
     message["From"] = sender_email
-    message["To"] = ", ".join(recipients)  # Join all recipients with commas
+    message["To"] = ", ".join(recipients)
     message["Subject"] = "New Folk2Folk Investment Opportunities"
     
     # Create the email body
@@ -137,13 +146,21 @@ def send_email(new_opportunities):
     
     try:
         # Create SMTP session
+        print("Connecting to SMTP server...")
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
             server.starttls()
+            print("Attempting login...")
             server.login(sender_email, sender_password)
+            print("Sending email...")
             server.send_message(message)
-        print("Email notification sent successfully")
+            print("Email sent successfully!")
+    except smtplib.SMTPAuthenticationError as e:
+        print("Authentication failed. Please check your email and App Password.")
+        print("Make sure you're using an App Password if 2FA is enabled.")
+        print(f"Error details: {str(e)}")
     except Exception as e:
         print(f"Failed to send email notification: {str(e)}")
+        print(f"Error type: {type(e).__name__}")
 
 def main():
     try:
