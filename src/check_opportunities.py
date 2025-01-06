@@ -13,24 +13,34 @@ import certifi
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_opportunities():
-    url = "https://folk2folk.com/opportunities/"
+    # First try accessing through a proxy to debug
+    test_url = "https://httpbin.org/get"
+    actual_url = "https://folk2folk.com/opportunities/"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
     
     try:
-        # Try different SSL configurations
+        # Test connection through httpbin first
+        print("Testing connection through httpbin...")
+        test_response = requests.get(test_url, headers=headers)
+        print(f"Test connection successful! Status: {test_response.status_code}")
+        
+        print("\nTrying to access Folk2Folk...")
+        # Try with different options for SSL
         try:
-            # First attempt: Use system certificates
-            response = requests.get(url, headers=headers)
+            # Try with default settings
+            response = requests.get(actual_url, headers=headers, timeout=10)
         except requests.exceptions.SSLError:
-            try:
-                # Second attempt: Use certifi bundle
-                response = requests.get(url, headers=headers, verify=certifi.where())
-            except requests.exceptions.SSLError:
-                # Final attempt: Disable verification (not recommended but might work)
-                print("Warning: SSL verification disabled due to certificate issues")
-                response = requests.get(url, headers=headers, verify=False)
+            print("SSL Error occurred, trying with custom SSL context...")
+            import ssl
+            context = ssl.create_default_context()
+            context.check_hostname = False
+            context.verify_mode = ssl.CERT_NONE
+            
+            session = requests.Session()
+            session.verify = False
+            response = session.get(actual_url, headers=headers, timeout=10)
         
         response.raise_for_status()
         
@@ -48,6 +58,14 @@ def get_opportunities():
         if not opportunities:
             print("Warning: No opportunities found. Page content preview:")
             print(response.text[:1000])
+            print("\nTrying alternative selectors...")
+            # Try some alternative selectors that might be used
+            print("Looking for tables...")
+            tables = soup.find_all('table')
+            print(f"Found {len(tables)} tables")
+            print("Looking for divs with 'opportunity' in class or id...")
+            opp_divs = soup.find_all('div', class_=lambda x: x and 'opportunity' in x.lower())
+            print(f"Found {len(opp_divs)} potential opportunity divs")
         
         current_opportunities = []
         for opp in opportunities:
@@ -67,6 +85,15 @@ def get_opportunities():
         if hasattr(e, 'response'):
             print(f"Response status code: {e.response.status_code}")
             print(f"Response headers: {e.response.headers}")
+        
+        # Try to get the IP address of the server
+        try:
+            import socket
+            ip = socket.gethostbyname('folk2folk.com')
+            print(f"\nServer IP address: {ip}")
+        except Exception as e:
+            print(f"Could not resolve IP: {str(e)}")
+            
         return None
 
 def load_previous_opportunities():

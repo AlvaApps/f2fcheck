@@ -22,6 +22,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Check SSL Certificate
+        run: python src/check_ssl.py
+
       - name: Check for new opportunities
         id: check
         env:
