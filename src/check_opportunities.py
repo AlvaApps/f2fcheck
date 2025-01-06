@@ -13,11 +13,22 @@ import certifi
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_opportunities():
-    # First try accessing through a proxy to debug
     test_url = "https://httpbin.org/get"
     actual_url = "https://folk2folk.com/opportunities/"
+    
+    # More complete browser-like headers
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Cache-Control': 'max-age=0'
     }
     
     try:
@@ -27,45 +38,60 @@ def get_opportunities():
         print(f"Test connection successful! Status: {test_response.status_code}")
         
         print("\nTrying to access Folk2Folk...")
-        # Try with different options for SSL
+        session = requests.Session()
+        
+        # Try different methods to access the site
         try:
-            # Try with default settings
-            response = requests.get(actual_url, headers=headers, timeout=10)
+            # Method 1: Direct request with SSL verification
+            print("Attempting direct request...")
+            response = session.get(actual_url, headers=headers, timeout=30)
         except requests.exceptions.SSLError:
-            print("SSL Error occurred, trying with custom SSL context...")
-            import ssl
-            context = ssl.create_default_context()
-            context.check_hostname = False
-            context.verify_mode = ssl.CERT_NONE
-            
-            session = requests.Session()
-            session.verify = False
-            response = session.get(actual_url, headers=headers, timeout=10)
+            try:
+                # Method 2: Using custom SSL context
+                print("Attempting with custom SSL context...")
+                session.verify = certifi.where()
+                response = session.get(actual_url, headers=headers, timeout=30)
+            except:
+                try:
+                    # Method 3: Without SSL verification (last resort)
+                    print("Attempting without SSL verification...")
+                    session.verify = False
+                    response = session.get(actual_url, headers=headers, timeout=30)
+                except Exception as e:
+                    print(f"All request methods failed. Final error: {str(e)}")
+                    raise
         
-        response.raise_for_status()
-        
-        # Print detailed response information for debugging
-        print(f"Connection successful!")
+        # If we get here, one of the requests succeeded
+        print(f"\nConnection successful!")
         print(f"Status code: {response.status_code}")
-        print(f"Headers: {dict(response.headers)}")
-        print(f"Content length: {len(response.text)}")
+        print(f"Response headers: {dict(response.headers)}")
         
+        if response.status_code == 403:
+            print("Access forbidden - website might be blocking automated access")
+            return None
+            
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # Find all opportunity elements
-        opportunities = soup.find_all('div', class_='opportunity-card')
+        # Try multiple selectors
+        opportunities = []
+        selectors = [
+            {'type': 'div', 'class_': 'opportunity-card'},
+            {'type': 'div', 'class_': lambda x: x and 'opportunity' in x.lower()},
+            {'type': 'table'},
+            {'type': 'div', 'class_': 'investment-opportunity'}
+        ]
+        
+        for selector in selectors:
+            elements = soup.find_all(selector['type'], class_=selector.get('class_'))
+            if elements:
+                print(f"Found {len(elements)} elements with selector {selector}")
+                opportunities = elements
+                break
         
         if not opportunities:
-            print("Warning: No opportunities found. Page content preview:")
+            print("\nNo opportunities found with any selector. Page preview:")
             print(response.text[:1000])
-            print("\nTrying alternative selectors...")
-            # Try some alternative selectors that might be used
-            print("Looking for tables...")
-            tables = soup.find_all('table')
-            print(f"Found {len(tables)} tables")
-            print("Looking for divs with 'opportunity' in class or id...")
-            opp_divs = soup.find_all('div', class_=lambda x: x and 'opportunity' in x.lower())
-            print(f"Found {len(opp_divs)} potential opportunity divs")
+            return None
         
         current_opportunities = []
         for opp in opportunities:
@@ -80,20 +106,17 @@ def get_opportunities():
         return current_opportunities
         
     except Exception as e:
-        print(f"Error fetching opportunities: {str(e)}")
+        print(f"\nError fetching opportunities: {str(e)}")
         print(f"Error type: {type(e).__name__}")
-        if hasattr(e, 'response'):
-            print(f"Response status code: {e.response.status_code}")
-            print(f"Response headers: {e.response.headers}")
         
         # Try to get the IP address of the server
         try:
             import socket
             ip = socket.gethostbyname('folk2folk.com')
             print(f"\nServer IP address: {ip}")
-        except Exception as e:
-            print(f"Could not resolve IP: {str(e)}")
-            
+        except Exception as ip_error:
+            print(f"Could not resolve IP: {str(ip_error)}")
+        
         return None
 
 def load_previous_opportunities():
@@ -154,25 +177,32 @@ def send_email(new_opportunities):
         print(f"Failed to send email notification: {str(e)}")
 
 def main():
-    current_opportunities = get_opportunities()
-    if current_opportunities is None:
-        return
-    
-    previous_opportunities = load_previous_opportunities()
-    new_opportunities = find_new_opportunities(current_opportunities, previous_opportunities)
-    
-    if new_opportunities:
-        print("::set-output name=has_new::true")
-        print("New opportunities found:")
-        for opp in new_opportunities:
-            print(f"- {opp['title']} | {opp['amount']} | {opp['rate']}")
-        # Send email notification
-        send_email(new_opportunities)
-    else:
-        print("::set-output name=has_new::false")
-        print("No new opportunities found")
-    
-    save_opportunities(current_opportunities)
+    try:
+        current_opportunities = get_opportunities()
+        if current_opportunities is None:
+            print("Failed to fetch opportunities. Exiting.")
+            return
+        
+        previous_opportunities = load_previous_opportunities()
+        new_opportunities = find_new_opportunities(current_opportunities, previous_opportunities)
+        
+        if new_opportunities:
+            print("::set-output name=has_new::true")
+            print("New opportunities found:")
+            for opp in new_opportunities:
+                print(f"- {opp['title']} | {opp['amount']} | {opp['rate']}")
+            send_email(new_opportunities)
+        else:
+            print("::set-output name=has_new::false")
+            print("No new opportunities found")
+        
+        save_opportunities(current_opportunities)
+        
+    except Exception as e:
+        print(f"Critical error in main: {str(e)}")
+        print(f"Error type: {type(e).__name__}")
+        import traceback
+        print(f"Traceback:\n{traceback.format_exc()}")
 
 if __name__ == "__main__":
     main() 
