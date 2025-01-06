@@ -7,6 +7,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import urllib3
+import certifi
 
 # Disable SSL warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -18,9 +19,9 @@ def get_opportunities():
     }
     
     try:
-        # Create a session with SSL verification disabled
+        # Create a session with SSL verification using certifi
         session = requests.Session()
-        session.verify = False
+        session.verify = certifi.where()
         
         response = session.get(url, headers=headers)
         response.raise_for_status()
