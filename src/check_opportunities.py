@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 import json
 import os
 from datetime import datetime
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 def get_opportunities():
     url = "https://folk2folk.com/opportunities/"
@@ -55,6 +58,43 @@ def find_new_opportunities(current, previous):
     new_titles = current_titles - previous_titles
     return [opp for opp in current if opp['title'] in new_titles]
 
+def send_email(new_opportunities):
+    sender_email = os.environ.get('EMAIL_SENDER')
+    sender_password = os.environ.get('EMAIL_PASSWORD')
+    recipients_str = os.environ.get('EMAIL_RECIPIENT', '')
+    recipients = [email.strip() for email in recipients_str.split(';') if email.strip()]
+    
+    if not all([sender_email, sender_password, recipients]):
+        print("Missing email configuration. Please check EMAIL_SENDER, EMAIL_PASSWORD, and EMAIL_RECIPIENT secrets.")
+        return
+    
+    # Create message
+    message = MIMEMultipart()
+    message["From"] = sender_email
+    message["To"] = ", ".join(recipients)  # Join all recipients with commas
+    message["Subject"] = "New Folk2Folk Investment Opportunities"
+    
+    # Create the email body
+    body = "New investment opportunities have been found:\n\n"
+    for opp in new_opportunities:
+        body += f"Title: {opp['title']}\n"
+        body += f"Amount: {opp['amount']}\n"
+        body += f"Rate: {opp['rate']}\n"
+        body += f"Found at: {opp['timestamp']}\n"
+        body += "-" * 40 + "\n"
+    
+    message.attach(MIMEText(body, "plain"))
+    
+    try:
+        # Create SMTP session
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()
+            server.login(sender_email, sender_password)
+            server.send_message(message)
+        print("Email notification sent successfully")
+    except Exception as e:
+        print(f"Failed to send email notification: {str(e)}")
+
 def main():
     current_opportunities = get_opportunities()
     if current_opportunities is None:
@@ -68,6 +108,8 @@ def main():
         print("New opportunities found:")
         for opp in new_opportunities:
             print(f"- {opp['title']} | {opp['amount']} | {opp['rate']}")
+        # Send email notification
+        send_email(new_opportunities)
     else:
         print("::set-output name=has_new::false")
         print("No new opportunities found")

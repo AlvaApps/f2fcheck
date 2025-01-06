@@ -16,7 +16,11 @@ This project monitors the Folk2Folk investment opportunities page for new invest
 
 1. Fork this repository
 2. Enable GitHub Actions in your fork
-3. The monitoring will start automatically
+3. Add the following secrets in your repository's Settings > Secrets and Variables > Actions:
+   - `EMAIL_SENDER`: Your Gmail address that will send notifications
+   - `EMAIL_PASSWORD`: Your Gmail password or App Password
+   - `EMAIL_RECIPIENT`: Email addresses where notifications should be sent (separate multiple addresses with semicolons, e.g., "email1@example.com;email2@example.com")
+4. The monitoring will start automatically
 
 You can also manually trigger the check using the "Run workflow" button in the Actions tab.
 

@@ -24,6 +24,10 @@ jobs:
 
       - name: Check for new opportunities
         id: check
+        env:
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: python src/check_opportunities.py
 
       - name: Commit changes
