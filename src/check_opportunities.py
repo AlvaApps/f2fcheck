@@ -16,89 +16,57 @@ def get_opportunities():
     test_url = "https://httpbin.org/get"
     actual_url = "https://folk2folk.com/opportunities/"
     
-    # More complete browser-like headers
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
-        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Encoding': 'gzip, deflate',
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1',
-        'Sec-Fetch-Dest': 'document',
-        'Sec-Fetch-Mode': 'navigate',
-        'Sec-Fetch-Site': 'none',
-        'Sec-Fetch-User': '?1',
-        'Cache-Control': 'max-age=0'
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
     }
     
     try:
-        # Test connection through httpbin first
         print("Testing connection through httpbin...")
         test_response = requests.get(test_url, headers=headers)
         print(f"Test connection successful! Status: {test_response.status_code}")
         
         print("\nTrying to access Folk2Folk...")
         session = requests.Session()
+        session.verify = False
+        response = session.get(actual_url, headers=headers, timeout=30)
         
-        # Try different methods to access the site
-        try:
-            # Method 1: Direct request with SSL verification
-            print("Attempting direct request...")
-            response = session.get(actual_url, headers=headers, timeout=30)
-        except requests.exceptions.SSLError:
-            try:
-                # Method 2: Using custom SSL context
-                print("Attempting with custom SSL context...")
-                session.verify = certifi.where()
-                response = session.get(actual_url, headers=headers, timeout=30)
-            except:
-                try:
-                    # Method 3: Without SSL verification (last resort)
-                    print("Attempting without SSL verification...")
-                    session.verify = False
-                    response = session.get(actual_url, headers=headers, timeout=30)
-                except Exception as e:
-                    print(f"All request methods failed. Final error: {str(e)}")
-                    raise
-        
-        # If we get here, one of the requests succeeded
         print(f"\nConnection successful!")
         print(f"Status code: {response.status_code}")
-        print(f"Response headers: {dict(response.headers)}")
+        print(f"Content type: {response.headers.get('Content-Type', 'Not specified')}")
         
-        if response.status_code == 403:
-            print("Access forbidden - website might be blocking automated access")
-            return None
-            
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # Try multiple selectors
-        opportunities = []
-        selectors = [
-            {'type': 'div', 'class_': 'opportunity-card'},
-            {'type': 'div', 'class_': lambda x: x and 'opportunity' in x.lower()},
-            {'type': 'table'},
-            {'type': 'div', 'class_': 'investment-opportunity'}
-        ]
-        
-        for selector in selectors:
-            elements = soup.find_all(selector['type'], class_=selector.get('class_'))
-            if elements:
-                print(f"Found {len(elements)} elements with selector {selector}")
-                opportunities = elements
-                break
+        # Find all opportunity elements using the correct class
+        opportunities = soup.find_all('li', class_='market_list grid-item')
         
         if not opportunities:
-            print("\nNo opportunities found with any selector. Page preview:")
-            print(response.text[:1000])
+            print("No opportunities found with market_list class")
             return None
+        
+        print(f"Found {len(opportunities)} opportunities")
         
         current_opportunities = []
         for opp in opportunities:
+            # Extract the details based on the actual HTML structure
+            title = opp.find('h2', class_='box_title')
+            description = opp.find('p', class_='box_para common')
+            location = opp.find('h3', class_='location common')
+            interest = opp.find('h4', class_='interest common')
+            ltv = opp.find('h5', class_='ltv common')
+            
             opportunity = {
-                'title': opp.find('h3').text.strip() if opp.find('h3') else 'Unknown',
-                'amount': opp.find('div', class_='amount').text.strip() if opp.find('div', class_='amount') else 'Unknown',
-                'rate': opp.find('div', class_='rate').text.strip() if opp.find('div', class_='rate') else 'Unknown',
+                'title': title.text.strip() if title else 'Unknown',
+                'description': description.text.strip() if description else 'Unknown',
+                'location': location.text.replace('Location:', '').strip() if location else 'Unknown',
+                'interest': interest.text.replace('Interest:', '').strip() if interest else 'Unknown',
+                'ltv': ltv.text.replace('LTV:', '').strip() if ltv else 'Unknown',
                 'timestamp': datetime.utcnow().isoformat()
             }
             current_opportunities.append(opportunity)
@@ -109,7 +77,6 @@ def get_opportunities():
         print(f"\nError fetching opportunities: {str(e)}")
         print(f"Error type: {type(e).__name__}")
         
-        # Try to get the IP address of the server
         try:
             import socket
             ip = socket.gethostbyname('folk2folk.com')
@@ -159,8 +126,10 @@ def send_email(new_opportunities):
     body = "New investment opportunities have been found:\n\n"
     for opp in new_opportunities:
         body += f"Title: {opp['title']}\n"
-        body += f"Amount: {opp['amount']}\n"
-        body += f"Rate: {opp['rate']}\n"
+        body += f"Description: {opp['description']}\n"
+        body += f"Location: {opp['location']}\n"
+        body += f"Interest Rate: {opp['interest']}\n"
+        body += f"LTV: {opp['ltv']}\n"
         body += f"Found at: {opp['timestamp']}\n"
         body += "-" * 40 + "\n"
     
