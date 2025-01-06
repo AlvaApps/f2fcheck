@@ -6,6 +6,10 @@ from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import urllib3
+
+# Disable SSL warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_opportunities():
     url = "https://folk2folk.com/opportunities/"
@@ -14,15 +18,18 @@ def get_opportunities():
     }
     
     try:
-        # Added verify=False to bypass SSL certificate verification
-        response = requests.get(url, headers=headers, verify=False)
+        # Create a session with SSL verification disabled
+        session = requests.Session()
+        session.verify = False
+        
+        response = session.get(url, headers=headers)
         response.raise_for_status()
         
-        # Suppress only the InsecureRequestWarning from urllib3
-        import urllib3
-        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        
         soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Print the response content for debugging
+        print("Response status code:", response.status_code)
+        print("Response content preview:", response.text[:500])
         
         # Find all opportunity elements (you may need to adjust these selectors based on the actual page structure)
         opportunities = soup.find_all('div', class_='opportunity-card')
@@ -41,6 +48,9 @@ def get_opportunities():
         
     except Exception as e:
         print(f"Error fetching opportunities: {str(e)}")
+        if hasattr(e, 'response'):
+            print(f"Response status code: {e.response.status_code}")
+            print(f"Response headers: {e.response.headers}")
         return None
 
 def load_previous_opportunities():
