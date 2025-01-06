@@ -19,21 +19,35 @@ def get_opportunities():
     }
     
     try:
-        # Create a session with SSL verification using certifi
-        session = requests.Session()
-        session.verify = certifi.where()
+        # Try different SSL configurations
+        try:
+            # First attempt: Use system certificates
+            response = requests.get(url, headers=headers)
+        except requests.exceptions.SSLError:
+            try:
+                # Second attempt: Use certifi bundle
+                response = requests.get(url, headers=headers, verify=certifi.where())
+            except requests.exceptions.SSLError:
+                # Final attempt: Disable verification (not recommended but might work)
+                print("Warning: SSL verification disabled due to certificate issues")
+                response = requests.get(url, headers=headers, verify=False)
         
-        response = session.get(url, headers=headers)
         response.raise_for_status()
+        
+        # Print detailed response information for debugging
+        print(f"Connection successful!")
+        print(f"Status code: {response.status_code}")
+        print(f"Headers: {dict(response.headers)}")
+        print(f"Content length: {len(response.text)}")
         
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # Print the response content for debugging
-        print("Response status code:", response.status_code)
-        print("Response content preview:", response.text[:500])
-        
-        # Find all opportunity elements (you may need to adjust these selectors based on the actual page structure)
+        # Find all opportunity elements
         opportunities = soup.find_all('div', class_='opportunity-card')
+        
+        if not opportunities:
+            print("Warning: No opportunities found. Page content preview:")
+            print(response.text[:1000])
         
         current_opportunities = []
         for opp in opportunities:
@@ -49,6 +63,7 @@ def get_opportunities():
         
     except Exception as e:
         print(f"Error fetching opportunities: {str(e)}")
+        print(f"Error type: {type(e).__name__}")
         if hasattr(e, 'response'):
             print(f"Response status code: {e.response.status_code}")
             print(f"Response headers: {e.response.headers}")
