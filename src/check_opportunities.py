@@ -159,7 +159,7 @@ def main():
             print("::set-output name=has_new::true")
             print("New opportunities found:")
             for opp in new_opportunities:
-                print(f"- {opp['title']} | {opp['amount']} | {opp['rate']}")
+                print(f"- {opp['title']} | {opp['location']} | {opp['interest']}")
             send_email(new_opportunities)
         else:
             print("::set-output name=has_new::false")

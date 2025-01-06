@@ -38,6 +38,11 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          # Create empty opportunities.json if it doesn't exist
+          if [ ! -f opportunities.json ]; then
+            echo "[]" > opportunities.json
+          fi
           git add opportunities.json
-          git commit -m "Update opportunities [skip ci]"
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "Update opportunities [skip ci]"
           git push
