@@ -1,43 +1,19 @@
 [
   {
-    "title": "Refinance Loan - LAI00001766",
-    "description": "Refinancing existing Folk2Folk Loan. Development site with planning permission for 6 luxury apartments with sea views. Term: 2 years",
-    "location": "Devon",
-    "interest": "8.75% p.a.",
-    "ltv": "64% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.254818"
-  },
-  {
-    "title": "Refinance Loan - LAI00001769",
-    "description": "New loan to repay existing Folk2Folk loan of \u00a355k plus the additional \u00a310k for set up costs. And a further \u00a315k for building works already completed. Secured on 0.74 acres development site with planning permission for 3 x 4-bed detached dwellings. Term: 2 years.",
-    "location": "Gloucestershire",
-    "interest": "8.75% p.a.",
-    "ltv": "25% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255018"
-  },
-  {
-    "title": "Refinance Loan - LAI00001767",
-    "description": "New loan to repay existing loan of \u00a3154k plus the additional is for F2F to retain 18 months interest and fees, plus set up costs and an outstanding tax bill which is due to the previous sale to F2F, secured on 150 acres across 2 sites including a thatched farmhouse, and a range of outbuildings. Term: 18 months",
-    "location": "Devon",
+    "title": "Property Purchase Loan - LAI00001774",
+    "description": "Loan to assist with the purchase of property from ex-partner, which is also security - 14 acres of land with stables, shepherds\u2019 huts and a barn. In Dorset. Term:5 years.",
+    "location": "Dorset",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255205"
+    "timestamp": "2025-01-21T11:15:12.233637"
   },
   {
-    "title": "Property Purchase Loan - LAI00001754",
-    "description": "Loan to purchase freehold of 15th Century Inn in Devon, securing their future and which the borrower is currently trading from and leasing. The said property will be security. Term: 5 years.",
-    "location": "Devon",
-    "interest": "9.25% p.a.",
-    "ltv": "65% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255358"
-  },
-  {
-    "title": "Refinance Loan - LAI00001757",
-    "description": "Loan to refinance of some existing business finance, the security is a couple of parcels of land totalling 83 acres, near Exeter Devon. Term: 5 years",
-    "location": "Devon",
-    "interest": "9.25% p.a.",
-    "ltv": "65% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255459"
+    "title": "Property Development Loan - LAI00001773",
+    "description": "Loan to assist the borrower with a development of a residential dwelling in the county of Lancashire which will be as our security. Term: to 23/07/2026",
+    "location": "Lancashire",
+    "interest": "10.00% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.233853"
   },
   {
     "title": "Refinance Loan LAI00001761",
@@ -45,7 +21,47 @@
     "location": "Devon",
     "interest": "9.25% p.a.",
     "ltv": "40% (open market value)",
-    "timestamp": "2025-01-20T11:46:34.255553"
+    "timestamp": "2025-01-21T11:15:12.234031"
+  },
+  {
+    "title": "Refinance Loan - LAI00001769",
+    "description": "New loan to repay existing Folk2Folk loan of \u00a355k plus the additional \u00a310k for set up costs. And a further \u00a315k for building works already completed. Secured on 0.74 acres development site with planning permission for 3 x 4-bed detached dwellings. Term: 2 years.",
+    "location": "Gloucestershire",
+    "interest": "8.75% p.a.",
+    "ltv": "25% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.234150"
+  },
+  {
+    "title": "Refinance Loan - LAI00001767",
+    "description": "New loan to repay existing loan of \u00a3154k plus the additional is for F2F to retain 18 months interest and fees, plus set up costs and an outstanding tax bill which is due to the previous sale to F2F, secured on 150 acres across 2 sites including a thatched farmhouse, and a range of outbuildings. Term: 18 months",
+    "location": "Devon",
+    "interest": "8.75% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.234284"
+  },
+  {
+    "title": "Refinance Loan - LAI00001766",
+    "description": "Refinancing existing Folk2Folk Loan. Development site with planning permission for 6 luxury apartments with sea views. Term: 2 years",
+    "location": "Devon",
+    "interest": "8.75% p.a.",
+    "ltv": "64% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.234387"
+  },
+  {
+    "title": "Refinance Loan - LAI00001757",
+    "description": "Loan to refinance of some existing business finance, the security is a couple of parcels of land totalling 83 acres, near Exeter Devon. Term: 5 years",
+    "location": "Devon",
+    "interest": "9.25% p.a.",
+    "ltv": "65% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.234483"
+  },
+  {
+    "title": "Property Purchase Loan - LAI00001754",
+    "description": "Loan to purchase freehold of 15th Century Inn in Devon, securing their future and which the borrower is currently trading from and leasing. The said property will be security. Term: 5 years.",
+    "location": "Devon",
+    "interest": "9.25% p.a.",
+    "ltv": "65% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.234575"
   },
   {
     "title": "Business Expansion Loan - LAI00001752",
@@ -53,7 +69,7 @@
     "location": "Lincolnshire",
     "interest": "9.25% p.a.",
     "ltv": "65% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255647"
+    "timestamp": "2025-01-21T11:15:12.234666"
   },
   {
     "title": "Refinance Loan LAI-00001762",
@@ -61,47 +77,7 @@
     "location": "Worcestershire",
     "interest": "8.75",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255738"
-  },
-  {
-    "title": "Refinance Loan - LAI00001760",
-    "description": "New loan to repay existing Folk2Folk loan of \u00a3500,000 secured on a Farm. This consists of a farmhouse, 2 barns and 1.6 acres of land. Term 1 year.",
-    "location": "Bristol",
-    "interest": "8.75% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255828"
-  },
-  {
-    "title": "Refinance Loan - LAI00001765",
-    "description": "Loan for renewal of maturing F2F loan, secured on farmhouse, buildings and land, Staffordshire. Term: 18 months",
-    "location": "Staffordshire",
-    "interest": "8.75% p.a.",
-    "ltv": "30% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.255919"
-  },
-  {
-    "title": "Refinance Loan LAI-00001761",
-    "description": "New loan to repay existing Folk2Folk loan with the existing \u00a35,000 fpr upfront fees, secured on Land and Buildings in Bideford whch is a 4 - bedroom barn conversion with a 1 - bedroom annex attached. 3 year term.",
-    "location": "Devon",
-    "interest": "9.25% p.a.",
-    "ltv": "40% (open market value)",
-    "timestamp": "2025-01-20T11:46:34.256009"
-  },
-  {
-    "title": "Business Expansion Loan - LAI00001764",
-    "description": "Loan to assist with the expansion of the milking herd and settle some current unsecured debt. The security is 147 acres, farmhouse and buildings, in West Yorkshire. Term: to 08.02.2027",
-    "location": "West Yorkshire",
-    "interest": "9.0% p.a.",
-    "ltv": "45% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.256101"
-  },
-  {
-    "title": "Property Development Loan - LAI00001759",
-    "description": "Existing borrower requesting funds to assist with the next phase of the build of three dwellings, these plots also make up the security. Near Holsworthy, Devon. Term to end November 2025.",
-    "location": "Devon",
-    "interest": "10% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.256192"
+    "timestamp": "2025-01-21T11:15:12.234757"
   },
   {
     "title": "Business Expansion Loan - LAI00001758",
@@ -109,7 +85,47 @@
     "location": "Cumbria",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.256304"
+    "timestamp": "2025-01-21T11:15:12.234847"
+  },
+  {
+    "title": "Property Development Loan - LAI00001759",
+    "description": "Existing borrower requesting funds to assist with the next phase of the build of three dwellings, these plots also make up the security. Near Holsworthy, Devon. Term to end November 2025.",
+    "location": "Devon",
+    "interest": "10% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.234939"
+  },
+  {
+    "title": "Refinance Loan - LAI00001760",
+    "description": "New loan to repay existing Folk2Folk loan of \u00a3500,000 secured on a Farm. This consists of a farmhouse, 2 barns and 1.6 acres of land. Term 1 year.",
+    "location": "Bristol",
+    "interest": "8.75% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.235030"
+  },
+  {
+    "title": "Business Expansion Loan - LAI00001764",
+    "description": "Loan to assist with the expansion of the milking herd and settle some current unsecured debt. The security is 147 acres, farmhouse and buildings, in West Yorkshire. Term: to 08.02.2027",
+    "location": "West Yorkshire",
+    "interest": "9.0% p.a.",
+    "ltv": "45% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.235121"
+  },
+  {
+    "title": "Refinance Loan LAI-00001761",
+    "description": "New loan to repay existing Folk2Folk loan with the existing \u00a35,000 fpr upfront fees, secured on Land and Buildings in Bideford whch is a 4 - bedroom barn conversion with a 1 - bedroom annex attached. 3 year term.",
+    "location": "Devon",
+    "interest": "9.25% p.a.",
+    "ltv": "40% (open market value)",
+    "timestamp": "2025-01-21T11:15:12.235239"
+  },
+  {
+    "title": "Refinance Loan - LAI00001765",
+    "description": "Loan for renewal of maturing F2F loan, secured on farmhouse, buildings and land, Staffordshire. Term: 18 months",
+    "location": "Staffordshire",
+    "interest": "8.75% p.a.",
+    "ltv": "30% (Open Market Value)",
+    "timestamp": "2025-01-21T11:15:12.235333"
   },
   {
     "title": "Property Purchase LAI-00001756",
@@ -117,7 +133,7 @@
     "location": "Argyll & Bute, Scotland.",
     "interest": "9.25% p.a.",
     "ltv": "65% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.256395"
+    "timestamp": "2025-01-21T11:15:12.235424"
   },
   {
     "title": "Refinance Loan - LAI00001755",
@@ -125,7 +141,7 @@
     "location": "Cornwall",
     "interest": "9.00% p.a.",
     "ltv": "65% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.256486"
+    "timestamp": "2025-01-21T11:15:12.235514"
   },
   {
     "title": "Refinance Loan - LAI00001753",
@@ -133,7 +149,7 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.256578"
+    "timestamp": "2025-01-21T11:15:12.235604"
   },
   {
     "title": "Business Expansion Loan LAI00001751",
@@ -141,6 +157,6 @@
     "location": "Bristol",
     "interest": "8.75% p.a.",
     "ltv": "50% (Open Market Value)",
-    "timestamp": "2025-01-20T11:46:34.256671"
+    "timestamp": "2025-01-21T11:15:12.235695"
   }
 ]
