@@ -1,11 +1,19 @@
 [
   {
+    "title": "Refinance Loan LAI-00001824",
+    "description": "To refinance existing borrowing and continue with adding 3 new holiday units. Security 10.5 acres of land, 5 holiday cottages plus a shepherds hut, 3 cabins and 5 bedroomed farmhouse with another 2 bed property. 5 year term.",
+    "location": "Dorset",
+    "interest": "8.75% p.a.",
+    "ltv": "61.5% (Open Market Value)",
+    "timestamp": "2025-05-08T23:52:39.504850"
+  },
+  {
     "title": "Refinance Loan - LAI00001811",
     "description": "New loan to repay existing Folk2Folk loan of \u00a3120k and add additional funds for fees - secured on 18 acres of pastureland, a farmhouse and a range of farm buildings in North Devon. Term: 2 years.",
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "40% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.338254"
+    "timestamp": "2025-05-08T23:52:39.504983"
   },
   {
     "title": "Property Development Loan - LAI00001817",
@@ -13,7 +21,7 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.338395"
+    "timestamp": "2025-05-08T23:52:39.505101"
   },
   {
     "title": "Business Expansion Loan - LAI00001821",
@@ -21,7 +29,7 @@
     "location": "Cornwall",
     "interest": "9.0% p.a.",
     "ltv": "40% (open market value)",
-    "timestamp": "2025-05-07T16:34:13.338515"
+    "timestamp": "2025-05-08T23:52:39.505222"
   },
   {
     "title": "Property Renovation Loan - LAI00001806",
@@ -29,7 +37,7 @@
     "location": "Cornwall",
     "interest": "9.25% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.338634"
+    "timestamp": "2025-05-08T23:52:39.505340"
   },
   {
     "title": "Refinance Loan - LAI00001812",
@@ -37,7 +45,7 @@
     "location": "Cornwall",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.338752"
+    "timestamp": "2025-05-08T23:52:39.505459"
   },
   {
     "title": "Business Expansion Loan - LAI00001809",
@@ -45,7 +53,7 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.338869"
+    "timestamp": "2025-05-08T23:52:39.505575"
   },
   {
     "title": "Refinance Loan - LAI00001807",
@@ -53,7 +61,7 @@
     "location": "Gloucestershire",
     "interest": "9.00% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.338988"
+    "timestamp": "2025-05-08T23:52:39.505706"
   },
   {
     "title": "Development Project Loan - LAI00001814",
@@ -61,7 +69,7 @@
     "location": "Cornwall",
     "interest": "10.00% p.a.",
     "ltv": "40% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.339107"
+    "timestamp": "2025-05-08T23:52:39.505831"
   },
   {
     "title": "Refinance Loan - LAI00001815",
@@ -69,7 +77,7 @@
     "location": "Cheshire",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.339239"
+    "timestamp": "2025-05-08T23:52:39.505952"
   },
   {
     "title": "Business Expansion Loan - LAI00001810",
@@ -77,7 +85,7 @@
     "location": "Bedfordshire",
     "interest": "8.75% p.a.",
     "ltv": "50% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.339383"
+    "timestamp": "2025-05-08T23:52:39.506068"
   },
   {
     "title": "Refinance Loan - LAI00001813",
@@ -85,7 +93,7 @@
     "location": "Wales",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.339539"
+    "timestamp": "2025-05-08T23:52:39.506188"
   },
   {
     "title": "Refinance Loan LAI0001808",
@@ -93,7 +101,7 @@
     "location": "Cornwall",
     "interest": "8.75% p.a",
     "ltv": "60% (open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.339720"
+    "timestamp": "2025-05-08T23:52:39.506306"
   },
   {
     "title": "Property Development Loan LAI-00001823",
@@ -101,7 +109,7 @@
     "location": "Lancashire",
     "interest": "10% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-07T16:34:13.339864"
+    "timestamp": "2025-05-08T23:52:39.506421"
   },
   {
     "title": "Refinance Loan LAI-00001818",
@@ -109,6 +117,6 @@
     "location": "Sussex",
     "interest": "8.75% p.a.",
     "ltv": "40% (open market value)",
-    "timestamp": "2025-05-07T16:34:13.339988"
+    "timestamp": "2025-05-08T23:52:39.506543"
   }
 ]
