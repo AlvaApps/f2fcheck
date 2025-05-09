@@ -8,13 +8,15 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import urllib3
 import certifi
+import random
+import time
 
 # Disable SSL warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_opportunities():
     test_url = "https://httpbin.org/get"
-    actual_url = "https://folk2folk.com/opportunities/"
+    actual_url = f"https://folk2folk.com/opportunities/?nocache={int(time.time())}&rand={random.randint(1, 1000000)}"
     
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -23,19 +25,33 @@ def get_opportunities():
         'Accept-Encoding': 'gzip, deflate',
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1',
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
+        'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+        'If-None-Match': '',  # Prevent 304 Not Modified responses
+        'If-Modified-Since': ''  # Prevent 304 Not Modified responses
     }
     
     try:
-        print("Testing connection through httpbin...")
-        test_response = requests.get(test_url, headers=headers)
-        print(f"Test connection successful! Status: {test_response.status_code}")
-        
+
         print("\nTrying to access Folk2Folk...")
         session = requests.Session()
         session.verify = False
-        response = session.get(actual_url, headers=headers, timeout=30)
+        
+        # Disable session-level caching
+        session.headers.update(headers)
+        session.trust_env = False  # Disable environment-level proxy settings
+        
+        response = session.get(
+            actual_url,
+            headers=headers,
+            timeout=30,
+            allow_redirects=True,
+            stream=False  # Prevent response buffering
+        )
+        
+        # Force response to be processed immediately
+        response.raw.read()
         
         print(f"\nConnection successful!")
         print(f"Status code: {response.status_code}")
