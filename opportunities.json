@@ -1,11 +1,11 @@
 [
   {
-    "title": "Property Development Loan LAI-00001825",
-    "description": "Previously borrowed from Folk2Folk. To repay existing debt and continue the development of new houses at the site. Security is land with planning permission. Term 2 years.",
-    "location": "Somerton, Somerset.",
+    "title": "Property Renovation Loan LAI-00001826",
+    "description": "Tranche loans to assist with the next phase of barn conversions as first phase now complete, these barns and a parcel of adjacent land, make up the security, in Hayle, Cornwall. Term: Until Sept. 2026",
+    "location": "Cornwall",
     "interest": "10% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.303362"
+    "timestamp": "2025-05-13T12:55:57.653992"
   },
   {
     "title": "Refinance Loan - LAI00001811",
@@ -13,7 +13,7 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "40% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.303503"
+    "timestamp": "2025-05-13T12:55:57.654135"
   },
   {
     "title": "Property Development Loan - LAI00001817",
@@ -21,7 +21,7 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.303624"
+    "timestamp": "2025-05-13T12:55:57.654272"
   },
   {
     "title": "Business Expansion Loan - LAI00001821",
@@ -29,7 +29,7 @@
     "location": "Cornwall",
     "interest": "9.0% p.a.",
     "ltv": "40% (open market value)",
-    "timestamp": "2025-05-12T11:41:13.303741"
+    "timestamp": "2025-05-13T12:55:57.654395"
   },
   {
     "title": "Property Renovation Loan - LAI00001806",
@@ -37,7 +37,7 @@
     "location": "Cornwall",
     "interest": "9.25% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.303854"
+    "timestamp": "2025-05-13T12:55:57.654515"
   },
   {
     "title": "Refinance Loan - LAI00001812",
@@ -45,7 +45,7 @@
     "location": "Cornwall",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.303982"
+    "timestamp": "2025-05-13T12:55:57.654638"
   },
   {
     "title": "Business Expansion Loan - LAI00001809",
@@ -53,7 +53,7 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304099"
+    "timestamp": "2025-05-13T12:55:57.654760"
   },
   {
     "title": "Refinance Loan - LAI00001807",
@@ -61,7 +61,7 @@
     "location": "Gloucestershire",
     "interest": "9.00% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304213"
+    "timestamp": "2025-05-13T12:55:57.654881"
   },
   {
     "title": "Development Project Loan - LAI00001814",
@@ -69,7 +69,7 @@
     "location": "Cornwall",
     "interest": "10.00% p.a.",
     "ltv": "40% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304328"
+    "timestamp": "2025-05-13T12:55:57.655006"
   },
   {
     "title": "Refinance Loan - LAI00001815",
@@ -77,7 +77,7 @@
     "location": "Cheshire",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304442"
+    "timestamp": "2025-05-13T12:55:57.655129"
   },
   {
     "title": "Business Expansion Loan - LAI00001810",
@@ -85,7 +85,7 @@
     "location": "Bedfordshire",
     "interest": "8.75% p.a.",
     "ltv": "50% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304557"
+    "timestamp": "2025-05-13T12:55:57.655264"
   },
   {
     "title": "Refinance Loan - LAI00001813",
@@ -93,7 +93,7 @@
     "location": "Wales",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304673"
+    "timestamp": "2025-05-13T12:55:57.655383"
   },
   {
     "title": "Refinance Loan LAI0001808",
@@ -101,7 +101,7 @@
     "location": "Cornwall",
     "interest": "8.75% p.a",
     "ltv": "60% (open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304789"
+    "timestamp": "2025-05-13T12:55:57.655504"
   },
   {
     "title": "Property Development Loan LAI-00001823",
@@ -109,7 +109,7 @@
     "location": "Lancashire",
     "interest": "10% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-12T11:41:13.304904"
+    "timestamp": "2025-05-13T12:55:57.655633"
   },
   {
     "title": "Refinance Loan LAI-00001818",
@@ -117,6 +117,14 @@
     "location": "Sussex",
     "interest": "8.75% p.a.",
     "ltv": "40% (open market value)",
-    "timestamp": "2025-05-12T11:41:13.305036"
+    "timestamp": "2025-05-13T12:55:57.655757"
+  },
+  {
+    "title": "Property Development Loan LAI-00001825",
+    "description": "Previously borrowed from Folk2Folk. To repay existing debt and continue the development of new houses at the site. Security is land with planning permission. Term 2 years.",
+    "location": "Somerton, Somerset.",
+    "interest": "10% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-05-13T12:55:57.655878"
   }
 ]
