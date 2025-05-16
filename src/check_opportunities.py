@@ -10,6 +10,7 @@ import urllib3
 import certifi
 import random
 import time
+from twilio.rest import Client
 
 # Disable SSL warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -122,6 +123,39 @@ def find_new_opportunities(current, previous):
     new_titles = current_titles - previous_titles
     return [opp for opp in current if opp['title'] in new_titles]
 
+def send_sms(new_opportunities):
+    account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
+    auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
+    twilio_number = os.environ.get('TWILIO_PHONE_NUMBER')
+    recipient_number = os.environ.get('SMS_RECIPIENT')
+    
+    if not all([account_sid, auth_token, twilio_number, recipient_number]):
+        print("Missing Twilio configuration. SMS notification skipped.")
+        return
+    
+    try:
+        client = Client(account_sid, auth_token)
+        
+        # Create the SMS message content
+        message_body = f"New Folk2Folk Investment Opportunities:\n"
+        for i, opp in enumerate(new_opportunities[:3], 1):  # Limit to first 3 opportunities to keep SMS short
+            message_body += f"{i}. {opp['title']} - {opp['location']} - {opp['interest']}\n"
+        
+        if len(new_opportunities) > 3:
+            message_body += f"...and {len(new_opportunities) - 3} more. Check your email for details."
+        
+        # Send the SMS
+        message = client.messages.create(
+            body=message_body,
+            from_=twilio_number,
+            to=recipient_number
+        )
+        
+        print(f"SMS sent successfully! SID: {message.sid}")
+    except Exception as e:
+        print(f"Failed to send SMS notification: {str(e)}")
+        print(f"Error type: {type(e).__name__}")
+
 def send_email(new_opportunities):
     sender_email = os.environ.get('EMAIL_SENDER')
     sender_password = os.environ.get('EMAIL_PASSWORD')
@@ -170,6 +204,9 @@ def send_email(new_opportunities):
             print("Sending email...")
             server.send_message(message)
             print("Email sent successfully!")
+            
+            # Send SMS notification after successful email
+            send_sms(new_opportunities)
     except smtplib.SMTPAuthenticationError as e:
         print("Authentication failed. Please check your email and App Password.")
         print("Make sure you're using an App Password if 2FA is enabled.")
