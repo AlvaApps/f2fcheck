@@ -1,35 +1,11 @@
 [
   {
-    "title": "Property Development Loan - LAI00001829",
-    "description": "Existing borrower requesting funds to assist with the next phase of the build of three dwellings, these plots also make up the security. Term: to 30/11/2025",
+    "title": "Refinance Loan - LAI00001830",
+    "description": "Refinancing existing Folk2Folk Loan secured against 31 acres of farmland, part of which has planning permission for a mixed use development of 114 dwellings together with a commercial mixed-use hub. Term: 2 years",
     "location": "Devon",
-    "interest": "10.00% p.a.",
+    "interest": "9.25% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.702508"
-  },
-  {
-    "title": "Refinance Loan - LAI00001811",
-    "description": "New loan to repay existing Folk2Folk loan of \u00a3120k and add additional funds for fees - secured on 18 acres of pastureland, a farmhouse and a range of farm buildings in North Devon. Term: 2 years.",
-    "location": "Devon",
-    "interest": "8.75% p.a.",
-    "ltv": "40% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.702640"
-  },
-  {
-    "title": "Refinance Loan - LAI00001827",
-    "description": "Loan to cover cost of developing farm to fork property which will consist of butchers and caf\u00e9/takeaway. Various parcels of land - 157 arable acres, 32 woodland acres and site of new development to be security. Term to 06/09/2026",
-    "location": "Norfolk",
-    "interest": "8.75% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.702765"
-  },
-  {
-    "title": "Business Expansion Loan - LAI00001821",
-    "description": "To enable various farm improvements and alterations to planning permissions to be undertaken. Enable purchase of property for renovation. Security to be c130 acres pastureland, Cornwall. Term 5 years.",
-    "location": "Cornwall",
-    "interest": "9.0% p.a.",
-    "ltv": "40% (open market value)",
-    "timestamp": "2025-05-16T10:22:19.702880"
+    "timestamp": "2025-05-16T13:51:48.246563"
   },
   {
     "title": "Property Development Loan - LAI00001817",
@@ -37,15 +13,39 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703010"
+    "timestamp": "2025-05-16T13:51:48.246695"
   },
   {
-    "title": "Property Renovation Loan - LAI00001806",
-    "description": "Loan to refurbish commercial property located in Penzance into a coffee house. The property being offered as security is on the main high street of Penzance. Term: 5 years",
-    "location": "Cornwall",
-    "interest": "9.25% p.a.",
+    "title": "Refinance Loan - LAI00001827",
+    "description": "Loan to cover cost of developing farm to fork property which will consist of butchers and caf\u00e9/takeaway. Various parcels of land - 157 arable acres, 32 woodland acres and site of new development to be security. Term to 06/09/2026",
+    "location": "Norfolk",
+    "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703126"
+    "timestamp": "2025-05-16T13:51:48.246827"
+  },
+  {
+    "title": "Business Expansion Loan - LAI00001821",
+    "description": "To enable various farm improvements and alterations to planning permissions to be undertaken. Enable purchase of property for renovation. Security to be c130 acres pastureland, Cornwall. Term 5 years.",
+    "location": "Cornwall",
+    "interest": "9.0% p.a.",
+    "ltv": "40% (open market value)",
+    "timestamp": "2025-05-16T13:51:48.246943"
+  },
+  {
+    "title": "Refinance Loan - LAI00001811",
+    "description": "New loan to repay existing Folk2Folk loan of \u00a3120k and add additional funds for fees - secured on 18 acres of pastureland, a farmhouse and a range of farm buildings in North Devon. Term: 2 years.",
+    "location": "Devon",
+    "interest": "8.75% p.a.",
+    "ltv": "40% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.247055"
+  },
+  {
+    "title": "Property Development Loan - LAI00001829",
+    "description": "Existing borrower requesting funds to assist with the next phase of the build of three dwellings, these plots also make up the security. Term: to 30/11/2025",
+    "location": "Devon",
+    "interest": "10.00% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.247169"
   },
   {
     "title": "Refinance Loan - LAI00001812",
@@ -53,31 +53,15 @@
     "location": "Cornwall",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703239"
+    "timestamp": "2025-05-16T13:51:48.247280"
   },
   {
-    "title": "Refinance Loan - LAI00001815",
-    "description": "Refinance for current F2F borrower with additional funds to further expand the business, the security is 8.8-acres of land with a 4-bedroom barn conversion, a 2-bedroom flat, 28 kennels and various outbuildings. Term: 5 years",
-    "location": "Cheshire",
-    "interest": "8.75% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703354"
-  },
-  {
-    "title": "Business Expansion Loan - LAI00001809",
-    "description": "To assist with the various aspects of planning and design for a potential development which is also the security in Kingsteignton, Devon. Term: 1 year",
-    "location": "Devon",
-    "interest": "8.75% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703468"
-  },
-  {
-    "title": "Development Project Loan - LAI00001814",
-    "description": "To continue the building of 3 new properties plus new road to site. Land with planning permission, plus 3 completed holiday lets to be security. Situated in Portwrinkle, Cornwall. Term: to 08/01/2027",
+    "title": "Property Renovation Loan - LAI00001806",
+    "description": "Loan to refurbish commercial property located in Penzance into a coffee house. The property being offered as security is on the main high street of Penzance. Term: 5 years",
     "location": "Cornwall",
-    "interest": "10.00% p.a.",
-    "ltv": "40% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703584"
+    "interest": "9.25% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.247392"
   },
   {
     "title": "Refinance Loan - LAI00001807",
@@ -85,47 +69,31 @@
     "location": "Gloucestershire",
     "interest": "9.00% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703698"
+    "timestamp": "2025-05-16T13:51:48.247501"
   },
   {
-    "title": "Refinance Loan LAI0001808",
-    "description": "Refinance of an existing FOLK2FOLK loan to enable the completion of a barn conversion. Secured by four properties. Term: 1 year",
+    "title": "Development Project Loan - LAI00001814",
+    "description": "To continue the building of 3 new properties plus new road to site. Land with planning permission, plus 3 completed holiday lets to be security. Situated in Portwrinkle, Cornwall. Term: to 08/01/2027",
     "location": "Cornwall",
-    "interest": "8.75% p.a",
-    "ltv": "60% (open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703822"
+    "interest": "10.00% p.a.",
+    "ltv": "40% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.247612"
   },
   {
-    "title": "Property Development Loan LAI-00001823",
-    "description": "To assist the borrower with the development of a residential dwelling in the county of Lancashire which will be our security. Term to July 2026.",
-    "location": "Lancashire",
-    "interest": "10% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.703949"
-  },
-  {
-    "title": "Refinance Loan LAI-00001818",
-    "description": "New loan to repay existing Folk2Folk loans of \u00a3100k plus an additional \u00a350k to repay external debt and \u00a310k for the set-up costs of this loan. Secured on c3 acre site including a barn which is a holiday let, tennis courts and an additional holiday let. Term 2 years.",
-    "location": "Sussex",
+    "title": "Refinance Loan - LAI00001815",
+    "description": "Refinance for current F2F borrower with additional funds to further expand the business, the security is 8.8-acres of land with a 4-bedroom barn conversion, a 2-bedroom flat, 28 kennels and various outbuildings. Term: 5 years",
+    "location": "Cheshire",
     "interest": "8.75% p.a.",
-    "ltv": "40% (open market value)",
-    "timestamp": "2025-05-16T10:22:19.704070"
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.247722"
   },
   {
-    "title": "Property Development Loan LAI-00001825",
-    "description": "Previously borrowed from Folk2Folk. To repay existing debt and continue the development of new houses at the site. Security is land with planning permission. Term 2 years.",
-    "location": "Somerton, Somerset.",
-    "interest": "10% p.a.",
+    "title": "Business Expansion Loan - LAI00001809",
+    "description": "To assist with the various aspects of planning and design for a potential development which is also the security in Kingsteignton, Devon. Term: 1 year",
+    "location": "Devon",
+    "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.704185"
-  },
-  {
-    "title": "Property Renovation Loan LAI-00001826",
-    "description": "Tranche loans to assist with the next phase of barn conversions as first phase now complete, these barns and a parcel of adjacent land, make up the security, in Hayle, Cornwall. Term: Until Sept. 2026",
-    "location": "Cornwall",
-    "interest": "10% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.704298"
+    "timestamp": "2025-05-16T13:51:48.247848"
   },
   {
     "title": "Refinance Loan - LAI00001813",
@@ -133,7 +101,47 @@
     "location": "Wales",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.704412"
+    "timestamp": "2025-05-16T13:51:48.247960"
+  },
+  {
+    "title": "Refinance Loan LAI0001808",
+    "description": "Refinance of an existing FOLK2FOLK loan to enable the completion of a barn conversion. Secured by four properties. Term: 1 year",
+    "location": "Cornwall",
+    "interest": "8.75% p.a",
+    "ltv": "60% (open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.248074"
+  },
+  {
+    "title": "Property Development Loan LAI-00001823",
+    "description": "To assist the borrower with the development of a residential dwelling in the county of Lancashire which will be our security. Term to July 2026.",
+    "location": "Lancashire",
+    "interest": "10% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.248187"
+  },
+  {
+    "title": "Refinance Loan LAI-00001818",
+    "description": "New loan to repay existing Folk2Folk loans of \u00a3100k plus an additional \u00a350k to repay external debt and \u00a310k for the set-up costs of this loan. Secured on c3 acre site including a barn which is a holiday let, tennis courts and an additional holiday let. Term 2 years.",
+    "location": "Sussex",
+    "interest": "8.75% p.a.",
+    "ltv": "40% (open market value)",
+    "timestamp": "2025-05-16T13:51:48.248301"
+  },
+  {
+    "title": "Property Development Loan LAI-00001825",
+    "description": "Previously borrowed from Folk2Folk. To repay existing debt and continue the development of new houses at the site. Security is land with planning permission. Term 2 years.",
+    "location": "Somerton, Somerset.",
+    "interest": "10% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.248411"
+  },
+  {
+    "title": "Property Renovation Loan LAI-00001826",
+    "description": "Tranche loans to assist with the next phase of barn conversions as first phase now complete, these barns and a parcel of adjacent land, make up the security, in Hayle, Cornwall. Term: Until Sept. 2026",
+    "location": "Cornwall",
+    "interest": "10% p.a.",
+    "ltv": "60% (Open Market Value)",
+    "timestamp": "2025-05-16T13:51:48.248521"
   },
   {
     "title": "Property Development Loan - LAI00001828",
@@ -141,7 +149,7 @@
     "location": "Devon",
     "interest": "8.75% p.a.",
     "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.704523"
+    "timestamp": "2025-05-16T13:51:48.248633"
   },
   {
     "title": "Business Expansion Loan - LAI00001810",
@@ -149,6 +157,6 @@
     "location": "Bedfordshire",
     "interest": "8.75% p.a.",
     "ltv": "50% (Open Market Value)",
-    "timestamp": "2025-05-16T10:22:19.704636"
+    "timestamp": "2025-05-16T13:51:48.248744"
   }
 ]
