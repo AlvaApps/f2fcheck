@@ -1,45 +1,5 @@
 [
   {
-    "title": "Refinance Loan - LAI00001830",
-    "description": "Refinancing existing Folk2Folk Loan secured against 31 acres of farmland, part of which has planning permission for a mixed use development of 114 dwellings together with a commercial mixed-use hub. Term: 2 years",
-    "location": "Devon",
-    "interest": "9.25% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T13:51:48.246563"
-  },
-  {
-    "title": "Property Development Loan - LAI00001817",
-    "description": "Next tranche of development funding to continue with the development site which is security for the loan. Term to 10th November 2025.",
-    "location": "Devon",
-    "interest": "8.75% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T13:51:48.246695"
-  },
-  {
-    "title": "Refinance Loan - LAI00001827",
-    "description": "Loan to cover cost of developing farm to fork property which will consist of butchers and caf\u00e9/takeaway. Various parcels of land - 157 arable acres, 32 woodland acres and site of new development to be security. Term to 06/09/2026",
-    "location": "Norfolk",
-    "interest": "8.75% p.a.",
-    "ltv": "60% (Open Market Value)",
-    "timestamp": "2025-05-16T13:51:48.246827"
-  },
-  {
-    "title": "Business Expansion Loan - LAI00001821",
-    "description": "To enable various farm improvements and alterations to planning permissions to be undertaken. Enable purchase of property for renovation. Security to be c130 acres pastureland, Cornwall. Term 5 years.",
-    "location": "Cornwall",
-    "interest": "9.0% p.a.",
-    "ltv": "40% (open market value)",
-    "timestamp": "2025-05-16T13:51:48.246943"
-  },
-  {
-    "title": "Refinance Loan - LAI00001811",
-    "description": "New loan to repay existing Folk2Folk loan of \u00a3120k and add additional funds for fees - secured on 18 acres of pastureland, a farmhouse and a range of farm buildings in North Devon. Term: 2 years.",
-    "location": "Devon",
-    "interest": "8.75% p.a.",
-    "ltv": "40% (Open Market Value)",
-    "timestamp": "2025-05-16T13:51:48.247055"
-  },
-  {
     "title": "Property Development Loan - LAI00001829",
     "description": "Existing borrower requesting funds to assist with the next phase of the build of three dwellings, these plots also make up the security. Term: to 30/11/2025",
     "location": "Devon",
